@@ -25,17 +25,42 @@ const Cart = (props) => {
         shipping = 12.99;
     }
 
-    const tax = Math.round(total *.1);
+    const tax = Math.round(total * .1);
     const grndTotal = Math.round(total + shipping + tax);
     return (
-        <div>
-            <h3>Order summary</h3>
+
+        <div >
+            <div>
+                <h3>Order Summary</h3>
+            </div>
+
+            {/* <h3>Order summary</h3>
             <p>Item Ordered: {cart.length}</p>
             <p>Product Price: {total} $</p>
             <p>Shipped Cost: {shipping} $</p>
             <p><small>Tax + Vat : {tax} $</small></p>
-            <p>Total: {grndTotal} $</p>
+            <p>Total: {grndTotal} $</p> */}
+            <div className="order-summary">
+                <div className="info">
+                    <p>Item Ordered</p>
+                    <p>Product Price</p>
+                    <p>Shipped Cost</p>
+                    <p><small>Tax + Vat</small></p>
+                    <p>Total</p>
+                </div>
+
+                <div className="price">
+                    <p>: {cart.length}</p>
+                    <p>: {total} $</p>
+                    <p>: {shipping} $</p>
+                    <p><small>: {tax} $</small></p>
+                    <p>: {grndTotal} $</p>
+
+                </div>
+            </div>
         </div>
+
+
     );
 };
 
